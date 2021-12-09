@@ -1,4 +1,5 @@
-public class Addition implements ExtraMethods{
+public class Addition implements ExtraMethods
+{
 
     private int num1;
     private int num2;
@@ -26,6 +27,25 @@ public class Addition implements ExtraMethods{
         this.num2 = num2;
     }
 
+
+    public static void addOperator(String answer)
+    {
+        if(answer.equals("addition"))
+        {
+            
+        }
+    }
+
+    @Override
+    public void addOperator() {
+
+    }
+
+    public void count()
+    {
+
+    }
+
     public String toString()
     {
         String output = "Number 1: " + num1 +
@@ -35,9 +55,4 @@ public class Addition implements ExtraMethods{
         return output;
     }
 
-    @Override
-    public void addOperator()
-    {
-
-    }
 }
