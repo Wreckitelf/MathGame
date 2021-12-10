@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class MathDriver
 {
     public static void main(String[] args)
     {
+
         Scanner kb = new Scanner(System.in);
         Addition addition = new Addition(0, 1);
         String operation;
@@ -18,7 +20,6 @@ public class MathDriver
         {
             operation = "addition";
             extraOperation(operation, kb);
-
         }
 
 
@@ -37,6 +38,18 @@ public class MathDriver
         else if(kb.nextLine().equals("+"))
         {
             Addition.addOperator("addition");
+        }
+        else if(kb.nextLine().equals("-"))
+        {
+            Addition.addOperator("addition");
+        }
+        else if(kb.nextLine().equals("*") || kb.nextLine().equals("x"))
+        {
+            Addition.addOperator("multiplication");
+        }
+        else if(kb.nextLine().equals("/"))
+        {
+            Addition.addOperator("division");
         }
 
     }
