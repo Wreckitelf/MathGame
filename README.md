@@ -12,5 +12,4 @@ Instructions:
 
 Interesting features: 
 I was able to add an option to add an extra operations, and that follows order of operations. 
-Division will also always give a whole number (Idea thanks to Aithy)
-I would write more, but thats it lol
+Division will also always give a whole number (Idea thanks to Aithy) 
