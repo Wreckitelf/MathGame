@@ -11,7 +11,7 @@ public class Division implements ExtraMethods
     private int answer;
     private int temp;
     private int temp2;
-    private String extraOperation;
+    private String extraOperation = "0";
 
     public Division(int num1, int num2, int num3, int answer)
     {

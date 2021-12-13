@@ -8,7 +8,7 @@ public class Multiplication implements ExtraMethods
     private int num3;
     private int answer;
     private int temp;
-    private String extraOperation;
+    private String extraOperation = "0";
 
     public Multiplication(int num1, int num2, int num3, int answer)
     {

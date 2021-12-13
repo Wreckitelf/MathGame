@@ -8,7 +8,7 @@ public class Subtraction implements ExtraMethods
     private int num3;
     private int answer;
     private int temp;
-    private String extraOperation;
+    private String extraOperation = "0";
 
     public Subtraction(int num1, int num2, int num3, int answer)
     {
@@ -40,6 +40,7 @@ public class Subtraction implements ExtraMethods
     {
         num1 = random.nextInt(10) - 1;
         num2 = random.nextInt(10) - 1;
+
         switch (extraOperation)
         {
             case "+" ->  {
@@ -56,7 +57,6 @@ public class Subtraction implements ExtraMethods
                 answer = num1 - (temp / num3);
             }
             case "0" -> {
-                extraOperation = "0";
                 answer = num1 - num2; // Case where no operator is picked. It will default to normal operation.
             }
         }

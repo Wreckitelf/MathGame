@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 //imma be real nothings hard to understand, so imma just explain the function of the method and everything I see fit.
+//LIMITATIONS: SKIPS AFTER EVERY INCORRECT ANSWER, AS WELL AS CHECKING SCORE
+//BUGS: WHEN QUITING, INCORRECT ANSWER PROMPTS
 public class MathDriver
 {
     //instance variables
