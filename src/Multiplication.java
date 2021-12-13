@@ -38,8 +38,8 @@ public class Multiplication implements ExtraMethods
 
     public void startGame()
     {
-        num1 = random.nextInt(10) - 1;
-        num2 = random.nextInt(10) - 1;
+        num1 = random.nextInt(10) + 1;
+        num2 = random.nextInt(10) + 1;
         switch (extraOperation)
         {
             case "+" ->  {
