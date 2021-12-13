@@ -1,13 +1,19 @@
+//Addition is my favorite class, so I am going to explain this one.
+
 import java.util.Random;
 
 public class Addition implements ExtraMethods
 {
+    //All my instance variables.
     Random random = new Random();
     private int num1;
     private int num2;
     private int num3;
     private int answer;
+    private int temp;
+    private String extraOperation;
 
+    //constructor
     public Addition(int num1, int num2, int num3, int answer)
     {
         this.num1 = num1;
@@ -16,6 +22,7 @@ public class Addition implements ExtraMethods
         this.answer = answer;
     }
 
+    //all my getters. I dont need setters because in no case should the user input the answer they want done.
     public int getNum1()
     {
         return num1;
@@ -32,62 +39,77 @@ public class Addition implements ExtraMethods
     {
         return answer;
     }
-    public void setNum1(int num1)
-    {
-        this.num1 = num1;
-    }
-    public void setNum2(int num2)
-    {
-        this.num2 = num2;
-    }
+    public int getTemp() { return temp; }
 
-    public void setAnswer(int answer)
-    {
-        this.answer = answer;
-    }
-
-
+    //Starts the game initially and second time its called, resets the game. uses switch, which is just if else statements.
+    //Sets the answer depending what the extra operation is.
     public void startGame()
     {
         num1 = random.nextInt(10) + 1;
         num2 = random.nextInt(10) + 1;
-    }
-
-    @Override
-    public int doMath(int num1, int num2)
-    {
-        answer = num1 + num2;
-        return answer;
-    }
-
-    @Override
-    public void addOperator(String test)
-    {
-        num3 = random.nextInt(10) + 1;
-
-        switch (test)
+        switch (extraOperation)
         {
-            case "+" -> answer = num1 + num2 + num3;
-            case "-" -> answer = (num1 + num2) - num3;
-            case "*" -> answer = num1 + (num2 * num3);
-            case "/" -> answer = num1 + (num2 / num3);
-            case "0" -> answer = num1 + num2; // Case where no operator is picked. It will default to normal operation.
+            case "+" ->  {
+                answer = num1 + num2 + num3;
+            }
+            case "-" -> {
+                answer = (num1 + num2) - num3;
+            }
+            case "*" -> {
+                answer = num1 + (num2 * num3);
+            }
+            case "/" -> {
+                temp = num2 * num3;
+                answer = num1 + (temp / num3);
+            }
+            case "0" -> {
+                extraOperation = "0";
+                answer = num1 + num2; // Case where no operator is picked. It will default to normal operation.
+            }
         }
     }
 
 
-    public void count()
+    //intially adds an operator. And if the user chooses not to, it will add the the numbers based on the default operator.
+    @Override
+    public void addOperator(String answer)
     {
 
-    }
+        num3 = random.nextInt(10) + 1;
 
+        switch (answer)
+        {
+            case "+" ->  {
+                extraOperation = "+";
+                this.answer = num1 + num2 + num3;
+            }
+            case "-" -> {
+                extraOperation = "-";
+                this.answer = (num1 + num2) - num3;
+            }
+            case "*" -> {
+                extraOperation = "*";
+                this.answer = num1 + (num2 * num3);
+            }
+            case "/" -> {
+                extraOperation = "/";
+                temp = num2 * num3;
+                this.answer = num1 + (temp / num3);
+            }
+            case "0" -> {
+                extraOperation = "0";
+                this.answer = num1 + num2; // Case where no operator is picked. It will default to normal operation.
+            }
+        }
+    }
+    //to string, outputs all nums.
     public String toString()
     {
-        String output = "Number 1: " + num1 +
-                "\nNumber 2: " + num2;
-
-
-        return output;
+        return  "Number 1: " + num1 +
+                "\nNumber 2: " + num2 +
+                "\nNumber 3: " + num3 +
+                "\nAnswer: " + answer +
+                "\nTemp: " + temp;
     }
 
 }
